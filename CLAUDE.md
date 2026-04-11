@@ -51,6 +51,7 @@ optimización del consumo eléctrico en entornos domésticos inteligentes"
 
 ### FASE 1 — Minería de datos y EDA (EN CURSO)
 - [x] Extracción y carga del dataset REFIT
+- [x] Inspección inicial: estructura, tipos, rango temporal, nulos, duplicados
 - [ ] Limpieza: valores nulos, duplicados, outliers
 - [ ] Análisis exploratorio: patrones temporales, correlaciones, distribuciones
 - [ ] Feature engineering: variables temporales, lags, medias móviles
@@ -124,13 +125,65 @@ PFM_MUCSI_Deusto/
 ## REGISTRO DE PROGRESO
 
 ### Sesión 1 — 2026-04-11
-**Estado:** Configuración inicial completada
+**Estado:** Configuración inicial completa y entorno listo para trabajar
 - Estructura de carpetas creada en Escritorio/PFM_MUCSI_Deusto/
 - CSVs extraídos del zip (Houses 1, 2, 3, 4, 5, 11) a datos/raw/
 - CLAUDE.md, README.md, requirements.txt y .gitignore creados
 - Repositorio Git inicializado con commit inicial
-**Siguiente paso:** Instalar dependencias (`pip install -r requirements.txt`) 
-y comenzar Notebook 01 de inspección inicial del dataset
+- Dependencias instaladas y verificadas:
+  - pandas 2.3.3 / numpy 2.3.5 / matplotlib 3.10.7 / seaborn 0.13.2
+  - scikit-learn 1.7.2 / statsmodels 0.14.6
+  - xgboost 3.2.0 / lightgbm 4.6.0
+  - jupyterlab 5.9.1 / ipykernel 7.2.0 / ipywidgets 8.1.8
+**Pendiente:** tensorflow/keras (se instalará en Fase 2 cuando se necesite)
+
+### Notebook 01 — 2026-04-11
+**Estado:** Completado y ejecutado correctamente
+- `notebooks/01_inspeccion_inicial.ipynb` generado y ejecutado sin errores
+- 8 figuras exportadas a `resultados/figuras/`
+- Resumen ejecutivo guardado en `resultados/metricas/01_resumen_inspeccion.csv`
+- Hallazgos clave:
+  - House1: 6.96M registros, 638 días (oct 2013 – jul 2015), media 481 W
+  - House2: 5.73M registros, 617 días (sep 2013 – may 2015), media 465 W
+  - House3: 6.99M registros, 614 días (sep 2013 – jun 2015), media 679 W
+  - Intervalo mediano real: 7 s (no exactamente 8 s)
+  - Sin valores nulos, sin duplicados de timestamp, sin valores negativos
+  - Issues=1: House1 0.84%, House2 0.50%, House3 5.84% (⚠️  House3 elevado)
+  - Consumo máximo House3: 65,836 W (posible outlier severo a investigar)
+**Siguiente paso:** Notebook 03 — Limpieza de datos
+  (tratamiento de Issues=1, outliers, remuestreo de 7s a 1 minuto)
+
+### Notebook 02 + Resumen — 2026-04-11
+**Estado:** Completado y ejecutado correctamente
+- `notebooks/02_presentacion_tutora.ipynb` — 5 figuras generadas:
+  - `02_serie_temporal_completa.png` — serie completa 2 años con media móvil 30 días
+  - `02_patron_diario_horas.png` — perfil horario laborable vs fin de semana con ±1σ
+  - `02_patron_semanal.png` — barras por día con IC al 95%
+  - `02_estacionalidad_mensual.png` — consumo medio por mes con paleta estacional
+  - `02_heatmap_semana_tipica.png` — heatmap hora × día de la semana
+- `resultados/metricas/02_estadisticas_house1_1min.csv` — estadísticas del remuestreo
+- `resultados/resumen_dataset_REFIT.md` — documento completo para tutora:
+  - Justificación de REFIT vs REDD / UK-DALE / IHEPC
+  - Características técnicas del dataset
+  - Tabla comparativa de modelos y métricas planificados
+  - Estado actual y próximos pasos detallados
+
+---
+
+## HALLAZGOS EDA INICIAL (Sesión 2 — 2026-04-11)
+
+- House1: 6.96M registros, oct 2013 – jul 2015, media 481W, Issues=1: 0.84%
+- House2: 5.73M registros, sep 2013 – may 2015, media 465W, Issues=1: 0.50%
+- House3: 6.99M registros, sep 2013 – jun 2015, media 679W, Issues=1: 5.84% ⚠️
+- Intervalo real de muestreo: 7 segundos (no 8 como indica la documentación)
+- House3 máximo: 65,836W — outlier severo, físicamente inverosímil ⚠️
+- House3 Issues=1 elevado — pendiente decidir estrategia: descartar o imputar
+- 8 figuras exportadas a resultados/figuras/
+- CSV resumen exportado a resultados/metricas/
+
+### DECISIONES PENDIENTES
+- Estrategia de tratamiento de Issues=1 en House3
+- Estrategia de tratamiento de outliers severos (especialmente House3)
 
 ---
 *Este archivo debe leerse al inicio de cada nueva sesión de trabajo.*
