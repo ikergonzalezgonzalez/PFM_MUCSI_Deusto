@@ -1,0 +1,47 @@
+# ============================================================
+# requirements.txt — PFM MUCSI Deusto
+# Predicción de Consumo Eléctrico en Hogares Inteligentes
+# Probado con Python 3.14.0
+# Última actualización: 2026-04-11
+# ============================================================
+
+# --- Manipulación y análisis de datos ---
+pandas>=2.2.0
+numpy>=1.26.0
+
+# --- Visualización ---
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# --- Machine Learning clásico ---
+scikit-learn>=1.4.0
+
+# --- Series temporales y modelos estadísticos ---
+statsmodels>=0.14.0
+
+# --- Gradient Boosting ---
+xgboost>=2.0.0
+lightgbm>=4.3.0
+
+# --- Redes neuronales ---
+# tensorflow>=2.16.0     # Descomentar cuando se use (Fase 2)
+# keras>=3.0.0           # Incluido en tensorflow>=2.16
+
+# --- Jupyter y entorno de notebooks ---
+jupyter>=1.0.0
+jupyterlab>=4.1.0
+ipykernel>=6.29.0
+ipywidgets>=8.1.0
+
+# --- Dashboard ---
+# streamlit>=1.32.0      # Descomentar en Fase 3
+
+# --- Utilidades ---
+joblib>=1.3.0            # Serialización de modelos sklearn
+scipy>=1.12.0            # Estadística y señal
+tqdm>=4.66.0             # Barras de progreso
+python-dateutil>=2.9.0   # Manipulación de fechas
+
+# --- Calidad de código (opcional pero recomendado) ---
+# black>=24.0.0          # Formateador de código
+# flake8>=7.0.0          # Linter

@@ -1,0 +1,106 @@
+# ============================================================
+# .gitignore — PFM MUCSI Deusto
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# --- Entornos virtuales ---
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.spyderproject.cfg
+.spyproject
+
+# --- Datos (no versionar CSVs grandes) ---
+datos/raw/*.csv
+datos/raw/*.zip
+# Si quieres versionar metadatos pequeños, comenta las líneas anteriores
+# y añade excepciones: !datos/raw/metadata.csv
+
+# --- Modelos entrenados grandes ---
+modelos/*.pkl
+modelos/*.h5
+modelos/*.pt
+modelos/*.pth
+modelos/*.joblib
+# Para versionar modelos pequeños, usa Git LFS o comenta esta sección
+
+# --- Resultados generados (se pueden reproducir) ---
+# resultados/figuras/*.png    # Descomentar si no quieres versionar figuras
+# resultados/metricas/*.csv   # Descomentar si no quieres versionar métricas
+
+# --- Archivos del sistema operativo ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Archivos temporales y logs ---
+*.log
+*.tmp
+*.bak
+*.cache
+
+# --- LaTeX auxiliares ---
+memoria_latex/*.aux
+memoria_latex/*.bbl
+memoria_latex/*.blg
+memoria_latex/*.fls
+memoria_latex/*.fdb_latexmk
+memoria_latex/*.synctex.gz
+memoria_latex/*.out
+memoria_latex/*.toc
+memoria_latex/*.lof
+memoria_latex/*.lot
+memoria_latex/_minted*/
+memoria_latex/*.nav
+memoria_latex/*.snm
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- Secretos y configuración local ---
+.env
+.env.local
+secrets.json
+config_local.py
