@@ -1,0 +1,13 @@
+Estado del PFM — 16/04/2026
+Completado
+Sesión 1: Estructura de carpetas, datos cargados, entorno Python configurado, Git inicializado
+Notebook 01: Inspección inicial de Houses 1, 2 y 3 — estadísticas, nulos, duplicados, outliers detectados
+Notebook 02: Visualizaciones para tutora + resumen del dataset REFIT
+Notebook 03: Limpieza de datos (figuras y métricas generadas, pendiente de commit)
+Hallazgos clave
+House3 tiene Issues=1 al 5.84% y un outlier severo de 65.836W — requirió atención especial en la limpieza
+Intervalo real de muestreo: 7s (no 8s como dice la documentación)
+Siguiente paso
+Notebook 04 — EDA profundo: análisis de patrones temporales (horario, semanal, mensual), correlaciones entre electrodomésticos y feature engineering (variables temporales, lags, medias móviles).
+
+También hay cambios sin commitear (Notebook 03 + figuras/métricas de limpieza) que deberías commitear antes de continuar.

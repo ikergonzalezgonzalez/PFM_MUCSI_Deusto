@@ -37,8 +37,8 @@ PFM_MUCSI_Deusto/
 │   └── processed/      # Datos limpios y features engineered
 ├── notebooks/          # Jupyter Notebooks numerados por fase
 │   ├── 01_inspeccion_inicial.ipynb
-│   ├── 02_limpieza_datos.ipynb
-│   ├── 03_eda_exploratorio.ipynb
+│   ├── 02_presentacion_tutora.ipynb
+│   ├── 03_limpieza_datos.ipynb
 │   ├── 04_feature_engineering.ipynb
 │   ├── 05_modelos_baseline.ipynb
 │   ├── 06_modelos_clasicos.ipynb
@@ -52,9 +52,34 @@ PFM_MUCSI_Deusto/
 ├── memoria_latex/      # Memoria académica en LaTeX
 ├── dashboard/          # Aplicación Streamlit
 ├── CLAUDE.md           # Contexto del proyecto para el asistente IA
+├── cleaning.md         # Documentación del proceso de limpieza de datos
 ├── requirements.txt    # Dependencias Python
 └── .gitignore
 ```
+
+---
+
+## Descripción de los Notebooks
+
+Cada notebook es **autocontenido y ejecutable de arriba a abajo** sin modificaciones.
+Deben ejecutarse en orden numérico, ya que cada uno parte de los resultados del anterior.
+
+### Fase 1 — Minería de datos y EDA
+
+| Notebook | Nombre | Propósito |
+|---|---|---|
+| `01` | **Inspección inicial** | Primer contacto con el dataset. Carga los tres CSVs, examina la estructura (columnas, tipos, tamaños), analiza el rango temporal y la granularidad real (~7 s), detecta Issues=1, duplicados y outliers. Genera 8 figuras diagnósticas y un CSV resumen. No modifica ningún dato — es solo lectura y análisis. |
+| `02` | **Presentación a la tutora** | Análisis exploratorio visual de House1 remuestreado a 1 minuto. Genera 5 figuras de alta calidad para presentar a la tutora: serie temporal completa (2 años), perfil horario (laborable vs. fin de semana), patrón semanal, estacionalidad mensual y heatmap hora×día. No aplica ninguna limpieza. |
+| `03` | **Limpieza de datos** | Corrige los problemas detectados en el Notebook 01: elimina registros con Issues=1, descarta outliers físicamente imposibles (Aggregate > 15.000 W), remuestrea a 1 minuto y rellena huecos cortos (≤ 30 min) por interpolación lineal. Guarda los tres hogares limpios en `datos/processed/`. Ver [cleaning.md](cleaning.md) para la documentación detallada. |
+| `04` | **Feature engineering** | *(Pendiente — Fase 1)* Construye las variables predictoras: variables temporales (hora, día, mes, estación), lags del consumo, medias móviles, variables cíclicas (sin/cos) e indicador de festivos del Reino Unido. |
+
+### Fase 2 — Modelado
+
+| Notebook | Nombre | Propósito |
+|---|---|---|
+| `05` | **Modelos baseline** | *(Pendiente — Fase 2)* Implementa los baselines de referencia: predicción por media histórica y por última observación conocida (naive). Establece el umbral mínimo de rendimiento que cualquier modelo debe superar. |
+| `06` | **Modelos clásicos** | *(Pendiente — Fase 2)* Entrena y evalúa ARIMA/SARIMA, XGBoost, Random Forest y LightGBM con validación temporal walk-forward. Comparativa rigurosa mediante RMSE, MAE, MAPE y R². |
+| `07` | **Redes neuronales** | *(Pendiente — Fase 2)* Implementa redes LSTM (y posiblemente Transformers). Requiere TensorFlow/Keras, que se instala en esta fase. Compara resultados con los modelos clásicos del Notebook 06. |
 
 ---
 

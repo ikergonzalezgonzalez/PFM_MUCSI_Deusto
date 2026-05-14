@@ -1,0 +1,14 @@
+house,n_registros,n_features,nan_lag_10080,top1_feature,top1_corr,top2_feature,top2_corr
+6,831420,36,132406,lag_1,0.779,rolling_mean_15,0.671
+7,882910,36,117801,lag_1,0.924,rolling_mean_15,0.794
+8,799224,36,89150,lag_1,0.878,rolling_mean_15,0.706
+9,817947,36,133351,lag_1,0.913,rolling_mean_15,0.763
+10,845197,36,85674,lag_1,0.922,rolling_mean_15,0.857
+12,702139,36,53673,lag_1,0.893,rolling_mean_15,0.718
+15,816947,36,105815,lag_1,0.876,rolling_mean_15,0.761
+16,782773,36,129945,lag_1,0.871,rolling_mean_15,0.754
+17,676650,36,41143,lag_1,0.857,rolling_mean_15,0.682
+18,637922,36,42874,lag_1,0.915,rolling_mean_15,0.73
+19,677410,36,41953,lag_1,0.786,rolling_mean_15,0.66
+20,662804,36,46668,lag_1,0.805,rolling_mean_15,0.686
+21,705337,36,73606,lag_1,0.936,rolling_mean_15,0.851

@@ -1,0 +1,21 @@
+house,fuente,pct_nan,uso
+1,Zenodo CLEAN,12.03,Entrenamiento
+2,Zenodo CLEAN,23.69,Validación externa
+3,Zenodo CLEAN,12.43,Entrenamiento
+4,Zenodo CLEAN,11.63,Entrenamiento
+5,Zenodo CLEAN,8.38,Entrenamiento
+6,Strathclyde,14.71,Entrenamiento
+7,Strathclyde,12.2,Entrenamiento
+8,Strathclyde,9.89,Entrenamiento
+9,Strathclyde,15.08,Entrenamiento
+10,Strathclyde,8.94,Entrenamiento
+11,Zenodo CLEAN,10.67,Entrenamiento
+12,Strathclyde,6.21,Entrenamiento
+13,Strathclyde,21.27,Excluido (NaN)
+15,Strathclyde,11.72,Entrenamiento
+16,Strathclyde,15.31,Entrenamiento
+17,Strathclyde,5.75,Entrenamiento
+18,Strathclyde,5.63,Entrenamiento
+19,Strathclyde,5.75,Entrenamiento
+20,Strathclyde,5.79,Entrenamiento
+21,Strathclyde,9.01,Entrenamiento

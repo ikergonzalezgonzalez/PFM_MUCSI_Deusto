@@ -1,0 +1,4 @@
+house,filas_raw,issues_eliminados,outliers_eliminados,filas_1min,nan_antes_interp,pct_nan_antes,nan_final,pct_nan_final,media_limpio_w,max_limpio_w,apto_training
+House4,6693070,67441,16,912939,128280,14.05,106194,11.63,381.7,11705.6,True
+House5,7004989,425766,28,933593,123660,13.25,78215,8.38,733.2,13554.9,True
+House11,4391427,40114,8,564697,64255,11.38,60254,10.67,455.8,6872.6,True

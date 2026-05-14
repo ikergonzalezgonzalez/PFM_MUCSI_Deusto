@@ -50,8 +50,14 @@ venv.bak/
 # --- Datos (no versionar CSVs grandes) ---
 datos/raw/*.csv
 datos/raw/*.zip
+datos/raw/strathclyde_duplicados/
+# Datos procesados (reproducibles desde los notebooks 03-06) — 6+ GB
+datos/processed/*.csv
 # Si quieres versionar metadatos pequeños, comenta las líneas anteriores
 # y añade excepciones: !datos/raw/metadata.csv
+
+# --- Configuración local de Claude Code ---
+.claude/
 
 # --- Modelos entrenados grandes ---
 modelos/*.pkl

@@ -1,0 +1,17 @@
+rol,horizonte_min,modelo,rmse,mae,mape,r2
+train,1,media_hora_dia,604.13,341.58,89.01,0.04
+train,1,persistencia,297.24,72.77,10.98,0.74
+train,15,media_hora_dia,604.15,341.58,89.01,0.04
+train,15,persistencia,669.17,255.63,53.72,-0.23
+train,60,media_hora_dia,604.17,341.6,89.02,0.04
+train,60,persistencia,763.0,322.62,72.94,-0.57
+train,1440,media_hora_dia,604.43,341.78,89.25,0.04
+train,1440,persistencia,772.01,335.97,79.76,-0.62
+validacion_externa,1,media_hora_dia,945.76,446.08,99.1,0.06
+validacion_externa,1,persistencia,416.61,91.76,11.34,0.81
+validacion_externa,15,media_hora_dia,945.72,446.01,99.08,0.06
+validacion_externa,15,persistencia,1001.5,337.72,61.83,-0.06
+validacion_externa,60,media_hora_dia,945.75,445.93,99.05,0.06
+validacion_externa,60,persistencia,1109.81,424.56,90.05,-0.29
+validacion_externa,1440,media_hora_dia,944.14,443.82,98.03,0.06
+validacion_externa,1440,persistencia,1185.78,506.88,122.2,-0.45

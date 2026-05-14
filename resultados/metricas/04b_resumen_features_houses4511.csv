@@ -1,0 +1,4 @@
+house,n_registros,n_features,nan_lag_10080,top1_feature,top1_corr,top2_feature,top2_corr
+4,912939,36,116274,lag_1,0.888,rolling_mean_15,0.684
+5,933593,36,88280,lag_1,0.907,rolling_mean_15,0.818
+11,564697,36,70334,lag_1,0.937,rolling_mean_15,0.893
